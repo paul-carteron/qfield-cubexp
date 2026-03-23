@@ -1,0 +1,6 @@
+[general]
+name=Cubexp
+description=QField plugin for tree marking
+author=Paul CARTERON
+icon=ic_axe_24dp.svg
+version=1.0.1
