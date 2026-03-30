@@ -195,6 +195,7 @@ Item {
     function getSurface(prfMode) {
 
         const param = qgisProject.mapLayersByName("Param")[0]
+        iface.logMessage(param)
         if (!param) return null
 
         let surface = 0
@@ -228,8 +229,8 @@ Item {
 
         let results = {}
         const it = (prfMode === "Toutes")
-            ? LayerUtils.createFeatureIterator(param)
-            : LayerUtils.createFeatureIteratorFromExpression(param, `"PARCELLE" = '${prfMode}'`)
+            ? LayerUtils.createFeatureIterator(arbres)
+            : LayerUtils.createFeatureIteratorFromExpression(arbres, `"PARCELLE" = '${prfMode}'`)
 
         // === SELECT MODE ===
         const modeFieldMap = {
