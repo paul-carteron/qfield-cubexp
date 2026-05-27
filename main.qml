@@ -194,15 +194,15 @@ Item {
 
     function getSurface(prfMode) {
 
-        const param = qgisProject.mapLayersByName("Param")[0]
-        iface.logMessage(param)
-        if (!param) return null
+        const lot = qgisProject.mapLayersByName("Lot")[0]
+        iface.logMessage(lot)
+        if (!lot) return null
 
         let surface = 0
 
         const it = (prfMode === "Toutes")
-            ? LayerUtils.createFeatureIterator(param)
-            : LayerUtils.createFeatureIteratorFromExpression(param, `"PARCELLE" = '${prfMode}'`)
+            ? LayerUtils.createFeatureIterator(lot)
+            : LayerUtils.createFeatureIteratorFromExpression(lot, `"PARCELLE" = '${prfMode}'`)
 
         while (it.hasNext()) {
             const f = it.next()
